@@ -1,0 +1,55 @@
+{
+	"type": "minecraft:block",
+	"pools": [
+		{
+			"bonus_rolls": 0,
+			"conditions": [
+				{
+					"condition": "minecraft:survives_explosion"
+				}
+			],
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"functions": [
+						{
+							"function": "minecraft:copy_components",
+							"include": [
+								"minecraft:custom_name",
+								"minecraft:container",
+								"minecraft:lock",
+								"minecraft:container_loot"
+							],
+							"source": "block_entity",
+							"conditions": [
+								{
+									"condition": "minecraft:match_tool",
+									"predicate": {
+										"predicates": {
+											"minecraft:enchantments": [
+												{
+													"enchantments": "minecraft:silk_touch",
+													"levels": {
+														"min": 1
+													}
+												}
+											]
+										}
+									}
+								}
+							]
+						},
+						{
+							"function": "minecraft:copy_components",
+							"include": ["minecraft:custom_name"],
+							"source": "block_entity"
+						}
+					],
+					"name": "minecraft:chest"
+				}
+			],
+			"rolls": 1
+		}
+	],
+	"random_sequence": "minecraft:blocks/chest"
+}
